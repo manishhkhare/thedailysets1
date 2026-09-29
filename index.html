@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Thedailyset | Healthy Hair & Wellness</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            darkGreen: "#103B2E",
+            green: "#176B4D",
+            lightGreen: "#EAF5EE",
+            cream: "#FBF8EF"
+          },
+          fontFamily: {
+            poppins: ["Poppins", "sans-serif"],
+            dm: ["DM Sans", "sans-serif"]
+          },
+          animation: {
+            float: "float 4s ease-in-out infinite",
+            floatSlow: "float 6s ease-in-out infinite",
+            pulseSoft: "pulseSoft 3s ease-in-out infinite",
+            slideUp: "slideUp .8s ease forwards",
+            fadeIn: "fadeIn 1s ease forwards"
+          },
+          keyframes: {
+            float: {
+              "0%,100%": {
+                transform: "translateY(0)"
+              },
+              "50%": {
+                transform: "translateY(-12px)"
+              }
+            },
+            pulseSoft: {
+              "0%,100%": {
+                transform: "scale(1)"
+              },
+              "50%": {
+                transform: "scale(1.05)"
+              }
+            },
+            slideUp: {
+              "0%": {
+                opacity: "0",
+                transform: "translateY(40px)"
+              },
+              "100%": {
+                opacity: "1",
+                transform: "translateY(0)"
+              }
+            },
+            fadeIn: {
+              "0%": {
+                opacity: "0"
+              },
+              "100%": {
+                opacity: "1"
+              }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* Background grid */
+
+    .hero-grid {
+      background-image:
+        linear-gradient(rgba(23,107,77,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23,107,77,.05) 1px, transparent 1px);
+      background-size: 35px 35px;
+    }
+
+    /* Scroll animation */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(60px);
+      transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-70px);
+      transition: .9s ease;
+    }
+
+    .reveal-left.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(70px);
+      transition: .9s ease;
+    }
+
+    .reveal-right.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Image hover */
+
+    .image-card img {
+      transition: transform .8s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .image-card:hover img {
+      transform: scale(1.06);
+    }
+
+    /* Card hover */
+
+    .guide-card {
+      transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+    }
+
+    .guide-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 60px rgba(16,59,46,.15);
+    }
+
+    /* Floating circles */
+
+    .orb {
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(2px);
+      pointer-events: none;
+    }
+
+    /* Progress line */
+
+    .growth-line {
+      position: relative;
+    }
+
+    .growth-line::before {
+      content: "";
+      position: absolute;
+      left: 24px;
+      top: 70px;
+      bottom: 30px;
+      width: 2px;
+      background: linear-gradient(
+        to bottom,
+        #176B4D,
+        #A7D7BA,
+        transparent
+      );
+    }
+
+    @media(max-width:768px) {
+      .growth-line::before {
+        display:none;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body class="bg-cream text-slate-800">
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header
+  class="sticky top-0 z-50 bg-cream/90 backdrop-blur-xl border-b border-green/10"
+>
+
+  <nav
+    class="max-w-7xl mx-auto px-5 lg:px-8 py-4 flex items-center justify-between"
+  >
+
+    <a href="#home" class="flex items-center gap-3">
+
+      <div
+        class="w-11 h-11 rounded-2xl bg-black text-white flex items-center justify-center font-bold shadow-lg"
+      >
+  <img src="./assets/logo.png" alt="logo">
+      </div>
+
+      <div>
+        <h2 class="font-poppins font-bold text-darkGreen">
+          Thedailyset
+        </h2>
+
+        <p class="text-xs text-slate-500">
+          Fitness • Hair • Wellness
+        </p>
+      </div>
+
+    </a>
+
+
+    <div class="hidden md:flex items-center gap-7 text-sm font-semibold">
+
+      <a href="#diet" class="hover:text-green transition">
+        Diet
+      </a>
+
+      <a href="#routine" class="hover:text-green transition">
+        Hair Routine
+      </a>
+
+      <a href="#scalp" class="hover:text-green transition">
+        Scalp
+      </a>
+
+      <a href="#growth" class="hover:text-green transition">
+        Hair Growth
+      </a>
+
+    </div>
+
+
+    <a
+      href="https://www.instagram.com/_thedailyset_/"
+      target="_blank"
+      class="bg-darkGreen text-white px-5 py-2.5 rounded-full text-sm font-bold hover:bg-green transition"
+    >
+      Instagram
+    </a>
+
+  </nav>
+
+</header>
+
+
+<!-- =====================================================
+     1. HERO
+===================================================== -->
+
+<section
+  id="home"
+  class="hero-grid relative overflow-hidden"
+>
+
+  <div
+    class="orb w-40 h-40 bg-green/10 -top-10 -right-10 animate-float"
+  ></div>
+
+  <div
+    class="orb w-56 h-56 bg-yellow-100/60 bottom-0 left-0 animate-floatSlow"
+  ></div>
+
+
+  <div
+    class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28"
+  >
+
+    <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+
+      <!-- HERO TEXT -->
+
+      <div class="reveal-left">
+
+        <span
+          class="inline-flex bg-white border border-green/10 px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase text-green shadow-sm"
+        >
+          FITNESS • NUTRITION • HAIR CARE
+        </span>
+
+
+        <h1
+          class="mt-6 text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] text-darkGreen"
+        >
+
+          Build healthier
+
+          <span class="text-green">
+            habits, scalp & hair.
+          </span>
+
+        </h1>
+
+
+        <p
+          class="mt-6 max-w-xl text-lg leading-8 text-slate-600"
+        >
+          Simple and practical fitness, nutrition and natural
+          hair-growth habits designed for consistent everyday progress.
+        </p>
+
+
+        <div class="mt-8 flex flex-wrap gap-3">
+
+          <a
+            href="#growth"
+            class="bg-darkGreen text-white px-7 py-3.5 rounded-full font-bold hover:bg-green hover:-translate-y-1 transition duration-300 shadow-lg"
+          >
+            Natural Hair Growth
+          </a>
+
+          <a
+            href="#diet"
+            class="bg-white border border-darkGreen/20 px-7 py-3.5 rounded-full font-bold text-darkGreen hover:border-green hover:text-green transition"
+          >
+            Explore Guides
+          </a>
+
+        </div>
+
+
+        <div class="mt-10 flex gap-10">
+
+          <div>
+            <strong class="text-3xl text-darkGreen">
+              7
+            </strong>
+
+            <p class="text-sm text-slate-500">
+              Growth Habits
+            </p>
+          </div>
+
+
+          <div>
+            <strong class="text-3xl text-darkGreen">
+              3
+            </strong>
+
+            <p class="text-sm text-slate-500">
+              Guides
+            </p>
+          </div>
+
+
+          <div>
+            <strong class="text-3xl text-darkGreen">
+              100%
+            </strong>
+
+            <p class="text-sm text-slate-500">
+              Consistency
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- HERO IMAGE -->
+
+      <div class="reveal-right">
+
+        <div
+          class="image-card bg-white p-3 rounded-[2rem] shadow-2xl animate-float"
+        >
+
+          <img
+            src="assets/vegetarian-diet.jpg"
+            alt="Vegetarian diet for healthy hair"
+            class="w-full h-[550px] object-cover object-top rounded-[1.5rem]"
+          >
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FEATURE STRIP
+===================================================== -->
+
+<section class="bg-white border-y border-green/10">
+
+  <div
+    class="max-w-7xl mx-auto px-5 lg:px-8 py-10 grid md:grid-cols-3 gap-8"
+  >
+
+    <div class="reveal flex gap-4">
+
+      <div
+        class="w-11 h-11 rounded-xl bg-lightGreen text-green flex items-center justify-center font-bold"
+      >
+        01
+      </div>
+
+      <div>
+
+        <h3 class="font-bold text-darkGreen">
+          Balanced Nutrition
+        </h3>
+
+        <p class="text-sm text-slate-500 mt-1">
+          Protein, vitamins and minerals.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="reveal flex gap-4">
+
+      <div
+        class="w-11 h-11 rounded-xl bg-lightGreen text-green flex items-center justify-center font-bold"
+      >
+        02
+      </div>
+
+      <div>
+
+        <h3 class="font-bold text-darkGreen">
+          Healthy Scalp
+        </h3>
+
+        <p class="text-sm text-slate-500 mt-1">
+          Clean and gentle scalp care.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="reveal flex gap-4">
+
+      <div
+        class="w-11 h-11 rounded-xl bg-lightGreen text-green flex items-center justify-center font-bold"
+      >
+        03
+      </div>
+
+      <div>
+
+        <h3 class="font-bold text-darkGreen">
+          Consistent Routine
+        </h3>
+
+        <p class="text-sm text-slate-500 mt-1">
+          Small habits every day.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     2. VEGETARIAN DIET
+===================================================== -->
+
+<section
+  id="diet"
+  class="max-w-7xl mx-auto px-5 lg:px-8 py-24"
+>
+
+  <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+
+    <div class="reveal-left">
+
+      <p class="text-sm font-bold uppercase tracking-[.22em] text-green">
+        01 • NUTRITION
+      </p>
+
+      <h2
+        class="text-4xl sm:text-5xl font-extrabold text-darkGreen mt-3"
+      >
+        Vegetarian Diet for Healthy Hair
+      </h2>
+
+      <p class="mt-5 text-slate-600 leading-7">
+        A balanced vegetarian diet can provide protein,
+        iron, zinc, folate, biotin and important vitamins
+        through a variety of everyday foods.
+      </p>
+
+
+      <div class="grid grid-cols-2 gap-3 mt-7">
+
+        <div class="bg-lightGreen rounded-2xl p-4">
+          <b class="text-darkGreen">Protein</b>
+          <p class="text-xs text-slate-500 mt-1">
+            Eggs, paneer, dal, soy
+          </p>
+        </div>
+
+        <div class="bg-yellow-50 rounded-2xl p-4">
+          <b class="text-darkGreen">Iron</b>
+          <p class="text-xs text-slate-500 mt-1">
+            Greens, legumes, seeds
+          </p>
+        </div>
+
+        <div class="bg-blue-50 rounded-2xl p-4">
+          <b class="text-darkGreen">Zinc</b>
+          <p class="text-xs text-slate-500 mt-1">
+            Seeds, nuts, dairy
+          </p>
+        </div>
+
+        <div class="bg-purple-50 rounded-2xl p-4">
+          <b class="text-darkGreen">Biotin</b>
+          <p class="text-xs text-slate-500 mt-1">
+            Eggs, nuts, grains
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="reveal-right image-card">
+
+      <img
+        src="assets/vegetarian-diet.jpg"
+        alt="Vegetarian diet"
+        class="w-full rounded-[2rem] shadow-2xl"
+      >
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     3. COMPLETE HAIRCARE ROUTINE
+===================================================== -->
+
+<section
+  id="routine"
+  class="bg-darkGreen text-white py-24"
+>
+
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+    <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+
+      <div class="reveal-left image-card">
+
+        <img
+          src="assets/haircare-routine.jpg"
+          alt="Complete haircare routine"
+          class="w-full rounded-[2rem] shadow-2xl"
+        >
+
+      </div>
+
+
+      <div class="reveal-right">
+
+        <p
+          class="text-sm font-bold uppercase tracking-[.22em] text-emerald-300"
+        >
+          02 • HAIR ROUTINE
+        </p>
+
+        <h2
+          class="text-4xl sm:text-5xl font-extrabold mt-3"
+        >
+          My Complete Haircare Routine
+        </h2>
+
+        <p class="mt-5 text-white/70 leading-7">
+          Keep your haircare routine simple, gentle and consistent.
+        </p>
+
+
+        <div class="mt-8 space-y-4">
+
+
+          <div
+            class="bg-white/5 border border-white/10 rounded-3xl p-5 hover:bg-white/10 transition"
+          >
+
+            <div class="flex gap-4">
+
+              <div
+                class="w-11 h-11 rounded-full bg-white text-darkGreen flex items-center justify-center font-bold"
+              >
+                1
+              </div>
+
+              <div>
+
+                <h3 class="font-bold text-xl">
+                  Coconut Oil
+                </h3>
+
+                <p class="text-white/60 mt-1">
+                  Around 2 times a week. Gentle scalp massage.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="bg-white/5 border border-white/10 rounded-3xl p-5 hover:bg-white/10 transition"
+          >
+
+            <div class="flex gap-4">
+
+              <div
+                class="w-11 h-11 rounded-full bg-white text-darkGreen flex items-center justify-center font-bold"
+              >
+                2
+              </div>
+
+              <div>
+
+                <h3 class="font-bold text-xl">
+                  Gentle Shampoo
+                </h3>
+
+                <p class="text-white/60 mt-1">
+                  Wash according to your scalp type.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="bg-white/5 border border-white/10 rounded-3xl p-5 hover:bg-white/10 transition"
+          >
+
+            <div class="flex gap-4">
+
+              <div
+                class="w-11 h-11 rounded-full bg-white text-darkGreen flex items-center justify-center font-bold"
+              >
+                3
+              </div>
+
+              <div>
+
+                <h3 class="font-bold text-xl">
+                  Rosemary Hair Spray
+                </h3>
+
+                <p class="text-white/60 mt-1">
+                  Apply if tolerated and gently massage.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     4. SCALP HEALTH
+===================================================== -->
+
+<section
+  id="scalp"
+  class="max-w-7xl mx-auto px-5 lg:px-8 py-24"
+>
+
+  <div class="text-center reveal">
+
+    <p class="text-sm font-bold uppercase tracking-[.22em] text-green">
+      03 • SCALP CARE
+    </p>
+
+    <h2
+      class="text-4xl sm:text-5xl font-extrabold text-darkGreen mt-3"
+    >
+      Scalp Health Guide
+    </h2>
+
+    <p class="max-w-2xl mx-auto mt-4 text-slate-600">
+      Healthy scalp = a healthier environment for your hair.
+    </p>
+
+  </div>
+
+
+  <div class="grid lg:grid-cols-2 gap-12 mt-12 items-center">
+
+
+    <div class="reveal-left image-card">
+
+      <img
+        src="assets/scalp-health.jpg"
+        alt="Scalp health guide"
+        class="w-full rounded-[2rem] shadow-xl"
+      >
+
+    </div>
+
+
+    <div class="reveal-right space-y-5">
+
+
+      <div class="bg-lightGreen rounded-3xl p-6 hover:-translate-y-1 transition">
+
+        <div class="flex gap-4">
+
+          <div class="w-11 h-11 rounded-full bg-green text-white flex items-center justify-center font-bold">
+            1
+          </div>
+
+          <div>
+
+            <h3 class="font-bold text-darkGreen">
+              Gentle Fingertip Massage
+            </h3>
+
+            <p class="text-sm text-slate-600 mt-2">
+              Use fingertips rather than nails.
+              Massage gently in circular motions for 3–5 minutes.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="bg-blue-50 rounded-3xl p-6 hover:-translate-y-1 transition">
+
+        <div class="flex gap-4">
+
+          <div class="w-11 h-11 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
+            2
+          </div>
+
+          <div>
+
+            <h3 class="font-bold text-darkGreen">
+              Wash According to Your Scalp
+            </h3>
+
+            <p class="text-sm text-slate-600 mt-2">
+              Washing frequency depends on your scalp condition,
+              oiliness and dandruff.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="bg-yellow-50 rounded-3xl p-6 hover:-translate-y-1 transition">
+
+        <div class="flex gap-4">
+
+          <div class="w-11 h-11 rounded-full bg-yellow-600 text-white flex items-center justify-center font-bold">
+            3
+          </div>
+
+          <div>
+
+            <h3 class="font-bold text-darkGreen">
+              Avoid Harsh Scrubbing
+            </h3>
+
+            <p class="text-sm text-slate-600 mt-2">
+              Avoid aggressive scratching and excessive rubbing
+              that may irritate your scalp.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     5. NATURAL HAIR GROWTH
+===================================================== -->
+
+<section
+  id="growth"
+  class="bg-[#F2F8F1] py-24"
+>
+
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+
+    <div class="text-center max-w-3xl mx-auto reveal">
+
+      <p class="text-sm font-bold uppercase tracking-[.22em] text-green">
+        FOCUS: NATURAL HAIR GROWTH 🌱
+      </p>
+
+      <h2
+        class="text-4xl sm:text-5xl font-extrabold text-darkGreen mt-3"
+      >
+        7 Habits for Healthier Hair
+      </h2>
+
+      <p class="mt-5 text-slate-600">
+        Focus on nutrition, scalp health, gentle care and
+        consistency instead of looking for overnight results.
+      </p>
+
+    </div>
+
+
+    <div class="growth-line mt-14 space-y-5">
+
+
+      <!-- STEP 1 -->
+
+      <div class="reveal bg-white rounded-3xl p-7 shadow-sm guide-card">
+
+        <div class="flex gap-5">
+
+          <div
+            class="w-12 h-12 shrink-0 rounded-2xl bg-green text-white flex items-center justify-center font-bold"
+          >
+            01
+          </div>
+
+          <div>
+
+            <h3 class="text-xl font-bold text-darkGreen">
+              Maintain a Healthy Diet
+            </h3>
+
+            <p class="text-sm text-slate-600 leading-7 mt-2">
+              Follow a balanced, nutrient-rich diet.
+              Avoid excessive oily foods and junk food.
+              Include fresh fruits, vegetables and whole foods
+              in your daily meals.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- STEP 2 -->
+
+      <div class="reveal bg-white rounded-3xl p-7 shadow-sm guide-card">
+
+        <div class="flex gap-5">
+
+          <div
+            class="w-12 h-12 shrink-0 rounded-2xl bg-green text-white flex items-center justify-center font-bold"
+          >
+            02
+          </div>
+
+          <div>
+
+            <h3 class="text-xl font-bold text-darkGreen">
+              Consume Enough Protein
+            </h3>
+
+            <p class="text-sm text-slate-600 leading-7 mt-2">
+              Include eggs, paneer, milk, lentils, soy chunks
+              and other suitable protein-rich foods.
+              Protein supports normal hair structure.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- STEP 3 -->
+
+      <div class="reveal bg-white rounded-3xl p-7 shadow-sm guide-card">
+
+        <div class="flex gap-5">
+
+          <div
+            class="w-12 h-12 shrink-0 rounded-2xl bg-green text-white flex items-center justify-center font-bold"
+          >
+            03
+          </div>
+
+          <div>
+
+            <h3 class="text-xl font-bold text-darkGreen">
+              Maintain Vitamin & Mineral Levels
+            </h3>
+
+            <p class="text-sm text-slate-600 leading-7 mt-2">
+              Important nutrients include Vitamin D, Vitamin B12,
+              Folate B9, Iron, Zinc and Biotin B7.
+            </p>
+
+            <div class="flex flex-wrap gap-2 mt-4">
+
+              <span class="px-3 py-1 bg-slate-100 rounded-full text-xs">
+                Vitamin D
+              </span>
+
+              <span class="px-3 py-1 bg-slate-100 rounded-full text-xs">
+                B12
+              </span>
+
+              <span class="px-3 py-1 bg-slate-100 rounded-full text-xs">
+                Iron
+              </span>
+
+              <span class="px-3 py-1 bg-slate-100 rounded-full text-xs">
+                Zinc
+              </span>
+
+              <span class="px-3 py-1 bg-slate-100 rounded-full text-xs">
+                Biotin
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- STEP 4 -->
+
+      <div class="reveal bg-white rounded-3xl p-7 shadow-sm guide-card">
+
+        <div class="flex gap-5">
+
+          <div
+            class="w-12 h-12 shrink-0 rounded-2xl bg-green text-white flex items-center justify-center font-bold"
+          >
+            04
+          </div>
+
+          <div>
+
+            <h3 class="text-xl font-bold text-darkGreen">
+              Keep Your Scalp Clean & Healthy
+            </h3>
+
+            <p class="text-sm text-slate-600 leading-7 mt-2">
+              Maintain good scalp hygiene. Wash your hair
+              regularly according to your scalp type.
+              Keep your scalp free from excessive buildup.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- STEP 5 -->
+
+      <div class="reveal bg-white rounded-3xl p-7 shadow-sm guide-card">
+
+        <div class="flex gap-5">
+
+          <div
+            class="w-12 h-12 shrink-0 rounded-2xl bg-green text-white flex items-center justify-center font-bold"
+          >
+            05
+          </div>
+
+          <div>
+
+            <h3 class="text-xl font-bold text-darkGreen">
+              Avoid Excessive Heat & Harsh Products
+            </h3>
+
+            <p class="text-sm text-slate-600 leading-7 mt-2">
+              Minimize excessive heat-styling tools.
+              Avoid harsh hair products and handle hair gently
+              to reduce breakage.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- STEP 6 -->
+
+      <div class="reveal bg-white rounded-3xl p-7 shadow-sm guide-card">
+
+        <div class="flex gap-5">
+
+          <div
+            class="w-12 h-12 shrink-0 rounded-2xl bg-green text-white flex items-center justify-center font-bold"
+          >
+            06
+          </div>
+
+          <div>
+
+            <h3 class="text-xl font-bold text-darkGreen">
+              Follow a Consistent Hair Care Routine
+            </h3>
+
+            <p class="text-sm text-slate-600 leading-7 mt-2">
+              Establish a simple routine. Choose products
+              that suit your scalp and hair type.
+              Be patient and consistent.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- STEP 7 -->
+
+      <div class="reveal bg-white rounded-3xl p-7 shadow-sm guide-card">
+
+        <div class="flex gap-5">
+
+          <div
+            class="w-12 h-12 shrink-0 rounded-2xl bg-green text-white flex items-center justify-center font-bold"
+          >
+            07
+          </div>
+
+          <div>
+
+            <h3 class="text-xl font-bold text-darkGreen">
+              Monitor Hairline & Hair Shedding
+            </h3>
+
+            <p class="text-sm text-slate-600 leading-7 mt-2">
+              Track changes in your hairline and excessive
+              shedding. Take progress photos periodically using
+              similar lighting and angles.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div
+      class="mt-10 bg-white rounded-3xl border border-green/10 p-7 reveal"
+    >
+
+      <h3 class="font-bold text-darkGreen">
+        Important Note
+      </h3>
+
+      <p class="text-sm text-slate-600 leading-7 mt-2">
+        These habits support general hair and scalp health,
+        but cannot guarantee that hair loss will stop or
+        hair will regrow. Persistent, sudden or severe
+        hair shedding should be discussed with a qualified
+        healthcare professional.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     6. DAILY HAIRCARE
+===================================================== -->
+
+<section class="bg-white py-24">
+
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+    <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+
+      <div class="reveal-left">
+
+        <p class="text-sm uppercase tracking-[.22em] text-green font-bold">
+          DAILY HAIR CARE
+        </p>
+
+        <h2
+          class="text-4xl sm:text-5xl font-extrabold text-darkGreen mt-3"
+        >
+          Simple care. Every day.
+        </h2>
+
+        <p class="mt-5 text-slate-600 leading-7">
+          Normal water rinse can be enough between washes.
+          Daily shampooing is not necessary for everyone.
+          Avoid harsh rubbing and aggressive scratching.
+        </p>
+
+
+        <div class="grid grid-cols-3 gap-3 mt-8">
+
+          <div class="bg-lightGreen rounded-2xl p-5 text-center">
+            <b class="text-2xl text-darkGreen">
+              3–5
+            </b>
+
+            <p class="text-xs text-slate-500 mt-1">
+              min massage
+            </p>
+          </div>
+
+
+          <div class="bg-blue-50 rounded-2xl p-5 text-center">
+            <b class="text-2xl text-darkGreen">
+              Gentle
+            </b>
+
+            <p class="text-xs text-slate-500 mt-1">
+              pressure
+            </p>
+          </div>
+
+
+          <div class="bg-yellow-50 rounded-2xl p-5 text-center">
+            <b class="text-2xl text-darkGreen">
+              Clean
+            </b>
+
+            <p class="text-xs text-slate-500 mt-1">
+              scalp
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="reveal-right image-card">
+
+        <img
+          src="assets/haircare-routine.jpg"
+          alt="Daily hair care"
+          class="w-full rounded-[2rem] shadow-xl"
+        >
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     7. NUTRITION
+===================================================== -->
+
+<section class="bg-[#F5F8F4] py-24">
+
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+    <div class="text-center reveal">
+
+      <p class="text-sm uppercase tracking-[.22em] text-green font-bold">
+        NUTRITION
+      </p>
+
+      <h2
+        class="text-4xl sm:text-5xl font-extrabold text-darkGreen mt-3"
+      >
+        Key nutrients for healthy hair
+      </h2>
+
+    </div>
+
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+
+
+      <div class="bg-white rounded-3xl p-6 guide-card reveal">
+        <h3 class="font-bold text-darkGreen">Iron</h3>
+        <p class="text-xs text-slate-500 mt-2">
+          Leafy greens, legumes, seeds
+        </p>
+      </div>
+
+
+      <div class="bg-white rounded-3xl p-6 guide-card reveal">
+        <h3 class="font-bold text-darkGreen">Zinc</h3>
+        <p class="text-xs text-slate-500 mt-2">
+          Seeds, nuts, legumes, dairy
+        </p>
+      </div>
+
+
+      <div class="bg-white rounded-3xl p-6 guide-card reveal">
+        <h3 class="font-bold text-darkGreen">Folate B9</h3>
+        <p class="text-xs text-slate-500 mt-2">
+          Greens, legumes, grains
+        </p>
+      </div>
+
+
+      <div class="bg-white rounded-3xl p-6 guide-card reveal">
+        <h3 class="font-bold text-darkGreen">Biotin B7</h3>
+        <p class="text-xs text-slate-500 mt-2">
+          Eggs, nuts, seeds
+        </p>
+      </div>
+
+
+      <div class="bg-white rounded-3xl p-6 guide-card reveal">
+        <h3 class="font-bold text-darkGreen">Vitamin C</h3>
+        <p class="text-xs text-slate-500 mt-2">
+          Amla, citrus, guava
+        </p>
+      </div>
+
+
+      <div class="bg-white rounded-3xl p-6 guide-card reveal">
+        <h3 class="font-bold text-darkGreen">Vitamin A</h3>
+        <p class="text-xs text-slate-500 mt-2">
+          Carrot, papaya, spinach
+        </p>
+      </div>
+
+
+      <div class="bg-white rounded-3xl p-6 guide-card reveal">
+        <h3 class="font-bold text-darkGreen">Protein</h3>
+        <p class="text-xs text-slate-500 mt-2">
+          Eggs, paneer, tofu, legumes
+        </p>
+      </div>
+
+
+      <div class="bg-white rounded-3xl p-6 guide-card reveal">
+        <h3 class="font-bold text-darkGreen">Vitamin B12</h3>
+        <p class="text-xs text-slate-500 mt-2">
+          Eggs, dairy or suitable sources
+        </p>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section class="max-w-7xl mx-auto px-5 lg:px-8 py-24">
+
+  <div
+    class="bg-lightGreen rounded-[2rem] p-10 sm:p-14 text-center reveal"
+  >
+
+    <p class="text-green font-bold uppercase tracking-[.22em] text-sm">
+      THEDAILYSETS
+    </p>
+
+    <h2
+      class="text-4xl sm:text-5xl font-extrabold text-darkGreen mt-3"
+    >
+      Consistency creates progress.
+    </h2>
+
+    <p class="max-w-2xl mx-auto mt-5 text-slate-600">
+      Focus on your nutrition, scalp health, lifestyle
+      and daily habits. Give your routine time.
+    </p>
+
+    <a
+      href="https://www.instagram.com/_thedailyset_/"
+      target="_blank"
+      class="inline-block mt-8 bg-darkGreen text-white px-8 py-4 rounded-full font-bold hover:bg-green hover:-translate-y-1 transition shadow-lg"
+    >
+      Follow @thedailyset_
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="bg-darkGreen text-white">
+
+  <div
+    class="max-w-7xl mx-auto px-5 lg:px-8 py-10 flex flex-col md:flex-row justify-between gap-6"
+  >
+
+    <div>
+
+      <h2 class="font-poppins text-xl font-bold">
+        Thedailyset
+      </h2>
+
+      <p class="text-sm text-white/60 mt-1">
+        Fitness • Nutrition • Hair • Wellness
+      </p>
+
+    </div>
+
+
+    <div class="flex gap-6 text-sm text-white/70">
+
+      <a href="#diet" class="hover:text-white">
+        Diet
+      </a>
+
+      <a href="#routine" class="hover:text-white">
+        Routine
+      </a>
+
+      <a href="#scalp" class="hover:text-white">
+        Scalp
+      </a>
+
+      <a href="#growth" class="hover:text-white">
+        Growth
+      </a>
+
+      <a
+        href="https://www.instagram.com/_thedailyset_/"
+        target="_blank"
+        class="hover:text-white"
+      >
+        Instagram
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT ANIMATIONS
+===================================================== -->
+
+<script>
+
+  /*
+    SCROLL REVEAL
+  */
+
+  const revealElements =
+    document.querySelectorAll(
+      ".reveal, .reveal-left, .reveal-right"
+    );
+
+
+  const revealObserver =
+    new IntersectionObserver(
+
+      (entries) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("active");
+
+          }
+
+        });
+
+      },
+
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -50px 0px"
+      }
+
+    );
+
+
+  revealElements.forEach((element) => {
+
+    revealObserver.observe(element);
+
+  });
+
+
+  /*
+    STAGGER ANIMATION
+  */
+
+  document
+    .querySelectorAll(".guide-card")
+    .forEach((card, index) => {
+
+      card.style.transitionDelay =
+        `${index * 80}ms`;
+
+    });
+
+
+  /*
+    NAVBAR SHADOW ON SCROLL
+  */
+
+  const navbar =
+    document.querySelector("header");
+
+
+  window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 30) {
+
+      navbar.classList.add(
+        "shadow-lg"
+      );
+
+    } else {
+
+      navbar.classList.remove(
+        "shadow-lg"
+      );
+
+    }
+
+  });
+
+</script>
+
+</body>
+</html>
